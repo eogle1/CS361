@@ -1,0 +1,16 @@
+all: buildUI buildPRNG buildImageService
+
+buildUI: makeDirectory
+	g++ -g -o build/ui.exe ui.cpp
+
+buildPRNG: makeDirectory
+	g++ -g -o build/prng.exe prng.cpp
+
+buildImageService: makeDirectory
+	g++ -g -o build/img-service.exe img-service.cpp
+
+makeDirectory:
+	mkdir -p build
+
+clean:
+	rm -rf build
